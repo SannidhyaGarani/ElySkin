@@ -34,10 +34,10 @@ const PromoBanner = () => {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative py-14 md:py-20 px-4 md:px-12 bg-[#FFF9F1] overflow-hidden"
+      className="relative py-14 md:py-20 px-4 md:px-12 bg-[#FDFBF7] overflow-hidden"
     >
       {/* Ambient background elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-[#FF6B00]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#C6A664]/10 rounded-full blur-3xl pointer-events-none" />
       
       <div className="max-w-[1600px] mx-auto relative">
         <div className={`flex flex-col lg:flex-row items-center transition-all duration-1000 ease-out-expo ${
@@ -56,91 +56,57 @@ const PromoBanner = () => {
                 }}
               />
               {/* Sophisticated Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A2D50]/40 to-transparent mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#C6A664]/20 to-transparent mix-blend-multiply" />
             </div>
 
             {/* Floating Badge */}
             <div 
-              className="absolute -bottom-6 -right-6 md:bottom-12 md:-right-12 bg-white p-6 md:p-10 rounded-[40px] shadow-2xl z-20 hidden sm:block transition-transform duration-500 hover:scale-105"
+              className="absolute -bottom-6 -right-6 md:bottom-12 md:-right-12 bg-[#FDFBF7] p-6 md:p-10 rounded-[40px] shadow-2xl z-20 hidden sm:block transition-transform duration-500 hover:scale-105"
               style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
             >
               <div className="flex flex-col items-center gap-2">
-                <span className="text-[40px] font-serif italic text-[#0A2D50]">25%</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FF6B00]">Inaugural Set</span>
+                <span className="text-[40px] font-serif italic text-[#4A4A4A]">15%</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C6A664]">Welcome Offer</span>
               </div>
             </div>
           </div>
 
           {/* CONTENT SECTION - Overlapping the image on large screens */}
           <div className="w-full lg:w-[50%] mt-[-60px] lg:mt-0 lg:ml-[-10%] relative z-10">
-            <div className="bg-[#0A2D50] p-8 md:p-16 lg:p-20 rounded-[40px] md:rounded-[60px] text-white shadow-2xl border border-white/5 relative overflow-hidden">
+            <div className="bg-[#FDFBF7] p-8 md:p-16 lg:p-20 rounded-[40px] md:rounded-[60px] text-[#4A4A4A] shadow-2xl border border-[#E6CCB2]/20 relative overflow-hidden">
               
               {/* Internal Decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF6B00]/10 rounded-full blur-[80px]" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C6A664]/10 rounded-full blur-[80px]" />
               
               <div className="relative z-10 space-y-8">
                 <div className="flex items-center gap-4">
-                  <Sparkles size={20} className="text-[#FF6B00]" />
-                  <span className="text-xs font-bold uppercase tracking-[0.5em] text-[#FF6B00]">
-                    Limited Clinical Release
+                  <Sparkles size={20} className="text-[#C6A664]" />
+                  <span className="text-xs font-bold uppercase tracking-[0.5em] text-[#C6A664]">
+                    The Essential Edit
                   </span>
                 </div>
 
                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight">
-                  The <span className="italic font-light">ElySkin</span> <br />
-                  <span className="text-[#FF6B00] font-black uppercase tracking-tighter not-italic">Ritual</span>
+                  Modern <br />
+                  <span className="italic font-light text-[#C6A664]">Self-Care</span>
                 </h2>
 
-                <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-md">
-                  A high-potency molecular system designed by dermatologists to 
-                  <span className="text-white font-medium"> reset cellular fatigue</span> and restore glass-like transparency.
+                <p className="text-lg md:text-xl text-[#4A4A4A]/60 font-light leading-relaxed max-w-md">
+                  Experience our dermatologist-formulated essentials designed for 
+                  <span className="text-[#4A4A4A] font-medium"> sustainable skin health</span> and a natural, lasting glow.
                 </p>
 
                 <div className="pt-6 space-y-10">
-                  <button className="group relative overflow-hidden flex items-center justify-between bg-[#FF6B00] px-8 py-6 rounded-2xl w-full sm:w-auto sm:min-w-[280px] transition-all hover:bg-white transition-colors duration-500">
-                    <span className="text-white group-hover:text-[#0A2D50] text-lg font-black uppercase tracking-widest transition-colors duration-500">
-                      Claim Your Set
-                    </span>
-                    <ArrowRight className="text-white group-hover:text-[#0A2D50] group-hover:translate-x-2 transition-all duration-500" size={24} />
-                    
-                    {/* Hover Slide Effect */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0A2D50] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                  <button className="group relative overflow-hidden flex items-center justify-between bg-[#C6A664] px-8 py-6 rounded-2xl w-full sm:w-auto sm:min-w-[280px] transition-all hover:bg-[#4A4A4A] transition-colors duration-500">
+                    <span className="text-white font-black uppercase tracking-[0.3em] text-sm">Explore Essentials</span>
+                    <ArrowRight size={20} className="text-white group-hover:translate-x-2 transition-transform" />
                   </button>
-
-                  {/* Clinical Stats Footer */}
-                  <div className="grid grid-cols-2 gap-8 pt-10 border-t border-white/10">
-                    <div className="space-y-2">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-serif text-[#FF6B00]">98</span>
-                        <span className="text-xs text-[#FF6B00] font-bold">%</span>
-                      </div>
-                      <p className="text-[10px] uppercase tracking-widest text-white/40 leading-tight">
-                        Reported Improved <br /> Skin Elasticity
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-serif text-white">12</span>
-                        <span className="text-xs text-white/40 font-bold">HR</span>
-                      </div>
-                      <p className="text-[10px] uppercase tracking-widest text-white/40 leading-tight">
-                        Deep Epidermal <br /> Hydration Lock
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
-      <style jsx>{`
-        .ease-out-expo {
-          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-        }
-      `}</style>
     </section>
   );
 };

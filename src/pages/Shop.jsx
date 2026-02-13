@@ -59,7 +59,7 @@ const Shop = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20">
+    <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-20">
       {selectedProduct && (
         <QuickView 
           product={selectedProduct} 
@@ -70,14 +70,14 @@ const Shop = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#FF6B00]/10 text-[#FF6B00] text-[10px] font-black uppercase tracking-[0.3em]">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#C6A664]/10 text-[#C6A664] text-[10px] font-black uppercase tracking-[0.3em]">
               The Collection
             </span>
-            <h1 className="text-6xl md:text-8xl font-black text-[#0A2D50] leading-[0.85] tracking-tighter">
-              All <span className="text-[#FF6B00] italic">Products</span>
+            <h1 className="text-6xl md:text-8xl font-black text-[#4A4A4A] leading-[0.85] tracking-tighter">
+              All <span className="text-[#C6A664] italic">Products</span>
             </h1>
           </div>
-          <p className="text-lg text-[#0A2D50]/40 font-black uppercase tracking-widest pb-2">
+          <p className="text-lg text-[#4A4A4A]/40 font-black uppercase tracking-widest pb-2">
             {filteredProducts.length} Results
           </p>
         </div>
@@ -85,11 +85,11 @@ const Shop = () => {
         {/* Filters & Search */}
         <div className="flex flex-col md:flex-row gap-6 mb-12">
           <div className="relative flex-1 group">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[#0A2D50]/20 group-focus-within:text-[#FF6B00] transition-colors" size={20} />
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[#4A4A4A]/20 group-focus-within:text-[#C6A664] transition-colors" size={20} />
             <input 
               type="text" 
               placeholder="Search our formulations..." 
-              className="w-full bg-[#FFF9F1] border border-[#0A2D50]/5 rounded-[24px] pl-16 pr-8 py-5 text-sm font-bold text-[#0A2D50] outline-none focus:border-[#FF6B00]/30 transition-all"
+              className="w-full bg-[#FDFBF7] border border-[#E6CCB2]/20 rounded-[24px] pl-16 pr-8 py-5 text-sm font-bold text-[#4A4A4A] outline-none focus:border-[#C6A664]/30 transition-all shadow-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -99,7 +99,7 @@ const Shop = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-8 py-5 rounded-[24px] text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all ${selectedCategory === cat ? 'bg-[#0A2D50] text-white shadow-xl shadow-[#0A2D50]/20' : 'bg-[#FFF9F1] text-[#0A2D50] hover:bg-[#0A2D50]/5 border border-[#0A2D50]/5'}`}
+                className={`px-8 py-5 rounded-[24px] text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all ${selectedCategory === cat ? 'bg-[#4A4A4A] text-white shadow-xl shadow-[#4A4A4A]/20' : 'bg-[#FDFBF7] text-[#4A4A4A] hover:bg-[#4A4A4A]/5 border border-[#E6CCB2]/20'}`}
               >
                 {cat}
               </button>
@@ -111,7 +111,7 @@ const Shop = () => {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="aspect-[4/5] rounded-[40px] bg-[#FFF9F1] animate-pulse" />
+              <div key={i} className="aspect-[4/5] rounded-[40px] bg-[#FDFBF7] border border-[#E6CCB2]/20 animate-pulse" />
             ))}
           </div>
         ) : (
@@ -120,21 +120,21 @@ const Shop = () => {
               <div 
                 key={product.id}
                 onClick={() => navigate(`/product/${product.id}`)}
-                className="group relative bg-white rounded-[40px] p-6 transition-all duration-500 hover:shadow-[0_30px_100px_rgba(10,45,80,0.1)] border border-[#0A2D50]/5 cursor-pointer overflow-hidden"
+                className="group relative bg-[#FDFBF7] rounded-[40px] p-6 transition-all duration-500 hover:shadow-[0_30px_100px_rgba(198,166,100,0.05)] border border-[#E6CCB2]/20 cursor-pointer overflow-hidden"
               >
-                <div className="relative aspect-square mb-8 bg-[#FFF9F1] rounded-[32px] overflow-hidden group-hover:scale-[0.98] transition-transform duration-700">
+                <div className="relative aspect-square mb-8 bg-[#FDFBF7] rounded-[32px] border border-[#E6CCB2]/10 overflow-hidden group-hover:scale-[0.98] transition-transform duration-700">
                   <img 
                     src={product.image || product.images?.[0]} 
                     alt={product.name} 
                     className="w-full h-full object-contain p-10 transform transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-[#C6A664]/0 group-hover:bg-[#C6A664]/5 transition-colors duration-500" />
                   
                   {/* Floating Actions */}
                   <div className="absolute top-4 right-4 flex flex-col gap-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500">
                     <button 
                       onClick={(e) => addToCollection(e, product, 'wishlist')}
-                      className="p-4 bg-white rounded-2xl text-[#0A2D50] hover:bg-[#FF6B00] hover:text-white transition-all shadow-xl"
+                      className="p-4 bg-[#FDFBF7] border border-[#E6CCB2]/20 rounded-2xl text-[#4A4A4A] hover:bg-[#C6A664] hover:text-white transition-all shadow-xl shadow-[#C6A664]/10"
                     >
                       <Heart size={20} />
                     </button>
@@ -143,7 +143,7 @@ const Shop = () => {
                         e.stopPropagation();
                         setSelectedProduct(product);
                       }}
-                      className="p-4 bg-white rounded-2xl text-[#0A2D50] hover:bg-[#FF6B00] hover:text-white transition-all shadow-xl"
+                      className="p-4 bg-[#FDFBF7] border border-[#E6CCB2]/20 rounded-2xl text-[#4A4A4A] hover:bg-[#C6A664] hover:text-white transition-all shadow-xl shadow-[#C6A664]/10"
                     >
                       <Eye size={20} />
                     </button>
@@ -152,26 +152,26 @@ const Shop = () => {
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#FF6B00]">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#C6A664]">
                       {product.category || 'Skin Care'}
                     </span>
                     <div className="flex items-center gap-1">
-                      <span className="text-[10px] font-black text-[#0A2D50]">★</span>
-                      <span className="text-[10px] font-black text-[#0A2D50]">{product.rating || '4.8'}</span>
+                      <span className="text-[10px] font-black text-[#C6A664]">★</span>
+                      <span className="text-[10px] font-black text-[#4A4A4A]">{product.rating || '4.8'}</span>
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-black text-[#0A2D50] leading-tight group-hover:text-[#FF6B00] transition-colors h-14 line-clamp-2">
+                  <h3 className="text-xl font-black text-[#4A4A4A] leading-tight group-hover:text-[#C6A664] transition-colors h-14 line-clamp-2">
                     {product.name}
                   </h3>
                   
-                  <div className="flex items-center justify-between pt-4 border-t border-[#0A2D50]/5">
+                  <div className="flex items-center justify-between pt-4 border-t border-[#E6CCB2]/20">
                     <div className="flex flex-col">
-                      <span className="text-2xl font-black text-[#0A2D50]">${product.price}.00</span>
+                      <span className="text-2xl font-black text-[#4A4A4A]">₹{product.price}.00</span>
                     </div>
                     <button 
                       onClick={(e) => addToCollection(e, product, 'cart')}
-                      className="w-14 h-14 bg-[#0A2D50] text-white rounded-2xl flex items-center justify-center hover:bg-[#FF6B00] hover:scale-110 transition-all shadow-xl shadow-[#0A2D50]/10"
+                      className="w-14 h-14 bg-[#C6A664] text-white rounded-2xl flex items-center justify-center hover:bg-[#4A4A4A] hover:scale-110 transition-all shadow-xl shadow-[#C6A664]/20"
                     >
                       <Plus size={24} />
                     </button>
@@ -184,15 +184,15 @@ const Shop = () => {
 
         {/* Empty State */}
         {!loading && filteredProducts.length === 0 && (
-          <div className="text-center py-32 bg-[#FFF9F1]/30 rounded-[64px] border border-dashed border-[#0A2D50]/10">
-            <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-[#0A2D50]/20 mx-auto mb-6">
+          <div className="text-center py-32 bg-[#FDFBF7] rounded-[64px] border border-dashed border-[#E6CCB2]/30">
+            <div className="w-20 h-20 rounded-full bg-[#FDFBF7] border border-[#E6CCB2]/20 flex items-center justify-center text-[#4A4A4A]/20 mx-auto mb-6">
               <Search size={40} />
             </div>
-            <h3 className="text-2xl font-black text-[#0A2D50] mb-2">No formulations found</h3>
-            <p className="text-sm text-[#0A2D50]/40 font-bold italic">Try adjusting your filters or search terms</p>
+            <h3 className="text-2xl font-black text-[#4A4A4A] mb-2">No formulations found</h3>
+            <p className="text-sm text-[#4A4A4A]/40 font-bold italic">Try adjusting your filters or search terms</p>
             <button 
               onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-              className="mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-[#FF6B00] hover:underline"
+              className="mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-[#C6A664] hover:underline"
             >
               Reset All Filters
             </button>

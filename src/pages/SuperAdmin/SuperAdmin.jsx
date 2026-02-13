@@ -24,13 +24,13 @@ const sidebarItems = [
 const metricCards = [
   { label: "Total Products", value: "1,240", trend: "+32 this month" },
   { label: "Total Orders", value: "8,532", trend: "+124 today" },
-  { label: "Revenue", value: "$128,430", trend: "Last 30 days" },
+  { label: "Revenue", value: "₹1,28,430", trend: "Last 30 days" },
 ];
 
 const orderRows = [
-  { id: "#98234", customer: "Ariana Dell", total: "$124.00", status: "Paid" },
-  { id: "#98215", customer: "Michael Lee", total: "$89.00", status: "Pending" },
-  { id: "#98198", customer: "Sofia Park", total: "$212.00", status: "Shipped" },
+  { id: "#98234", customer: "Ariana Dell", total: "₹124.00", status: "Paid" },
+  { id: "#98215", customer: "Michael Lee", total: "₹89.00", status: "Pending" },
+  { id: "#98198", customer: "Sofia Park", total: "₹212.00", status: "Shipped" },
 ];
 
 const statusBadgeClasses = (status) => {
@@ -171,7 +171,7 @@ const SuperAdmin = () => {
                   {row.category || "-"}
                 </td>
                 <td className="px-5 py-3 text-slate-900">
-                  ${Number(row.price || 0).toFixed(2)}
+                  ₹{Number(row.price || 0).toFixed(2)}
                 </td>
                 <td className="px-5 py-3 text-slate-600">
                   {row.suitable_for || "-"}

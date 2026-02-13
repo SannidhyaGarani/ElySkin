@@ -22,16 +22,16 @@ const TestimonialCard = ({ quote, author, product, rating, index }) => {
   return (
     <div 
       ref={cardRef}
-      className={`group relative flex flex-col bg-white p-10 md:p-14 rounded-[2rem] transition-all duration-1000 ease-out border border-[#0A2D50]/5 ${
+      className={`group relative flex flex-col bg-[#FDFBF7] p-10 md:p-14 rounded-[2rem] transition-all duration-1000 ease-out border border-[#E6CCB2]/20 shadow-xl shadow-[#D4A373]/5 hover:shadow-[#D4A373]/15 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
       {/* Background Subtle Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#FFF9F1]/50 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#F5F0E6]/50 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Quote Icon - Refined */}
-      <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#0A2D50] text-white rounded-full flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-xl">
+      <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#2D2D2D] text-white rounded-full flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-xl border border-[#E6CCB2]/30">
         <Quote size={20} fill="currentColor" />
       </div>
 
@@ -42,8 +42,8 @@ const TestimonialCard = ({ quote, author, product, rating, index }) => {
             <Star 
               key={i} 
               size={12} 
-              fill={i < rating ? "#FF6B00" : "none"} 
-              className={i < rating ? "text-[#FF6B00]" : "text-[#0A2D50]/10"} 
+              fill={i < rating ? "#C6A664" : "none"} 
+              className={i < rating ? "text-[#C6A664]" : "text-[#2D2D2D]/10"} 
               strokeWidth={3}
             />
           ))}
@@ -51,32 +51,32 @@ const TestimonialCard = ({ quote, author, product, rating, index }) => {
 
         {/* The Review - High Contrast Typography */}
         <blockquote className="mb-12">
-          <p className="font-serif text-2xl md:text-3xl text-[#0A2D50] leading-tight tracking-tight italic font-light">
+          <p className="font-serif text-2xl md:text-3xl text-[#2D2D2D] leading-tight tracking-tight italic font-light">
             "{quote}"
           </p>
         </blockquote>
 
         {/* Author Detail */}
-        <div className="mt-auto pt-8 border-t border-[#0A2D50]/5 flex items-center justify-between">
+        <div className="mt-auto pt-8 border-t border-[#E6CCB2]/30 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#0A2D50] text-[#FFF9F1] flex items-center justify-center font-serif italic text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#FF6B00]">
+            <div className="w-14 h-14 rounded-full bg-[#2D2D2D] text-[#FDFBF7] flex items-center justify-center font-serif italic text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#C6A664]">
               {author[0]}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-sm font-black uppercase tracking-widest text-[#0A2D50]">
+                <span className="text-sm font-black uppercase tracking-widest text-[#2D2D2D]">
                   {author}
                 </span>
-                <CheckCircle2 size={14} className="text-[#FF6B00]" />
+                <CheckCircle2 size={14} className="text-[#C6A664]" />
               </div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0A2D50]/40 mt-0.5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2D2D2D]/40 mt-0.5">
                 Verified Resident
               </p>
             </div>
           </div>
           
           <div className="hidden sm:block">
-             <span className="text-[10px] font-black uppercase tracking-tighter text-[#0A2D50]/20 rotate-90 inline-block">
+             <span className="text-[10px] font-black uppercase tracking-tighter text-[#2D2D2D]/20 rotate-90 inline-block">
                {product}
              </span>
           </div>
@@ -109,9 +109,9 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <section className="py-15 md:py-25 bg-[#FFF9F1]/30 relative overflow-hidden">
+    <section className="py-15 md:py-25 bg-[#FDFBF7] relative overflow-hidden">
       {/* Decorative Brand Text Background */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full text-[25vw] font-black text-[#0A2D50]/[0.02] pointer-events-none select-none whitespace-nowrap uppercase">
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full text-[25vw] font-black text-[#2D2D2D]/[0.02] pointer-events-none select-none whitespace-nowrap uppercase">
         ELYSKIN CLINIQUE
       </div>
 
@@ -120,26 +120,26 @@ const TestimonialSection = () => {
         {/* Editorial Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-12">
           <div className="max-w-3xl space-y-6">
-            <div className="flex items-center gap-4 text-[#FF6B00]">
-              <div className="h-px w-12 bg-[#FF6B00]" />
+            <div className="flex items-center gap-4 text-[#C6A664]">
+              <div className="h-px w-12 bg-[#C6A664]" />
               <span className="text-xs font-black uppercase tracking-[0.5em]">Global Community</span>
             </div>
-            <h2 className="text-6xl md:text-8xl font-serif text-[#0A2D50] leading-[0.85] tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-serif text-[#2D2D2D] leading-[0.85] tracking-tighter">
               Client <br />
               <span className="italic font-light">Sentiments</span>
             </h2>
           </div>
 
           {/* Stats Bar */}
-          <div className="flex items-center gap-10 bg-white p-8 rounded-[2.5rem] shadow-2xl shadow-[#0A2D50]/5 border border-white">
+          <div className="flex items-center gap-10 bg-[#FDFBF7] p-8 rounded-[2.5rem] shadow-2xl shadow-[#D4A373]/10 border border-[#E6CCB2]/20">
             <div className="text-center px-4">
-              <p className="text-4xl font-serif text-[#0A2D50]">4.9</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-[#FF6B00] mt-2">Rating</p>
+              <p className="text-4xl font-serif text-[#2D2D2D]">4.9</p>
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#C6A664] mt-2">Rating</p>
             </div>
-            <div className="w-px h-12 bg-[#0A2D50]/10" />
+            <div className="w-px h-12 bg-[#E6CCB2]/20" />
             <div className="text-center px-4">
-              <p className="text-4xl font-serif text-[#0A2D50]">15k</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-[#FF6B00] mt-2">Reviews</p>
+              <p className="text-4xl font-serif text-[#2D2D2D]">15k</p>
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#C6A664] mt-2">Reviews</p>
             </div>
           </div>
         </div>
@@ -155,21 +155,21 @@ const TestimonialSection = () => {
         <div className="mt-20">
           <div className="flex flex-col items-center justify-center space-y-16">
             <div className="flex items-center gap-6 w-full max-w-lg">
-              <div className="h-px flex-1 bg-[#0A2D50]/10" />
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#0A2D50]/30 whitespace-nowrap">
+              <div className="h-px flex-1 bg-[#E6CCB2]/20" />
+              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#2D2D2D]/30 whitespace-nowrap">
                 Endorsed By Excellence
               </span>
-              <div className="h-px flex-1 bg-[#0A2D50]/10" />
+              <div className="h-px flex-1 bg-[#E6CCB2]/20" />
             </div>
 
             <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 md:gap-x-32 opacity-40 hover:opacity-100 transition-opacity duration-1000">
-              <span className="font-serif text-3xl md:text-4xl tracking-tighter font-bold text-[#0A2D50] hover:text-[#FF6B00] transition-colors cursor-default">VOGUE</span>
-              <span className="font-sans text-xl md:text-2xl font-black tracking-[0.5em] text-[#0A2D50] hover:text-[#FF6B00] transition-colors cursor-default">ELLE</span>
-              <span className="font-serif text-2xl md:text-3xl italic font-bold text-[#0A2D50] hover:text-[#FF6B00] transition-colors cursor-default">Harper's BAZAAR</span>
-              <span className="font-sans text-lg md:text-xl tracking-[0.3em] uppercase font-bold text-[#0A2D50] hover:text-[#FF6B00] transition-colors cursor-default underline underline-offset-8 decoration-[#FF6B00]/30">Vanity Fair</span>
+              <span className="font-serif text-3xl md:text-4xl tracking-tighter font-bold text-[#2D2D2D] hover:text-[#C6A664] transition-colors cursor-default">VOGUE</span>
+              <span className="font-sans text-xl md:text-2xl font-black tracking-[0.5em] text-[#2D2D2D] hover:text-[#C6A664] transition-colors cursor-default">ELLE</span>
+              <span className="font-serif text-2xl md:text-3xl italic font-bold text-[#2D2D2D] hover:text-[#C6A664] transition-colors cursor-default">Harper's BAZAAR</span>
+              <span className="font-sans text-lg md:text-xl tracking-[0.3em] uppercase font-bold text-[#2D2D2D] hover:text-[#C6A664] transition-colors cursor-default underline underline-offset-8 decoration-[#C6A664]/30">Vanity Fair</span>
             </div>
 
-            <button className="group flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[#0A2D50] hover:text-[#FF6B00] transition-all duration-300">
+            <button className="group flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[#2D2D2D] hover:text-[#C6A664] transition-all duration-300">
               Read More Clinical Success Stories
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </button>

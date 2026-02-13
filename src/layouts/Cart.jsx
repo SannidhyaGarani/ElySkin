@@ -41,26 +41,26 @@ const Cart = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FFF9F1] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#0A2D50]"></div>
+      <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#C6A664]"></div>
       </div>
     );
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#FFF9F1] flex items-center justify-center px-6">
-        <div className="bg-white p-12 rounded-[40px] border border-[#0A2D50]/5 shadow-[0_20px_50px_rgba(10,45,80,0.05)] max-w-md w-full text-center">
-          <div className="w-20 h-20 bg-[#FFF9F1] rounded-3xl flex items-center justify-center mx-auto mb-8 text-[#0A2D50]/20">
+      <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center px-6">
+        <div className="bg-[#FDFBF7] p-12 rounded-[40px] border border-[#E6CCB2]/20 shadow-[0_20px_50px_rgba(198,166,100,0.05)] max-w-md w-full text-center">
+          <div className="w-20 h-20 bg-[#FDFBF7] border border-[#E6CCB2]/20 rounded-3xl flex items-center justify-center mx-auto mb-8 text-[#4A4A4A]/20">
             <ShoppingBag size={40} />
           </div>
-          <h2 className="text-2xl font-black text-[#0A2D50] mb-4 text-center">Your Cart Awaits</h2>
-          <p className="text-[#0A2D50]/60 font-medium mb-8">
+          <h2 className="text-2xl font-black text-[#4A4A4A] mb-4 text-center">Your Cart Awaits</h2>
+          <p className="text-[#4A4A4A]/60 font-medium mb-8">
             Sign in to view your selection and proceed to a seamless checkout.
           </p>
           <Link 
             to="/login" 
-            className="block w-full py-4 bg-[#0A2D50] text-white rounded-2xl font-black hover:bg-[#FF6B00] transition-all transform hover:-translate-y-1"
+            className="block w-full py-4 bg-[#C6A664] text-white rounded-2xl font-black hover:bg-[#4A4A4A] transition-all transform hover:-translate-y-1 shadow-lg shadow-[#C6A664]/20"
           >
             Sign In to Cart
           </Link>
@@ -72,38 +72,38 @@ const Cart = () => {
   const total = items.reduce((sum, i) => sum + (Number(i.price) || 0), 0);
 
   return (
-    <div className="min-h-screen bg-[#FFF9F1] pt-32 pb-20 px-6">
+    <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-20 px-6">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-16">
           
           {/* Main Cart Area */}
           <div className="flex-1">
             <div className="mb-12">
-              <Link to="/shop" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#0A2D50]/40 hover:text-[#FF6B00] transition-colors mb-8">
+              <Link to="/shop" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#4A4A4A]/40 hover:text-[#C6A664] transition-colors mb-8">
                 <ArrowLeft size={14} />
                 Continue Shopping
               </Link>
-              <h1 className="text-5xl md:text-7xl font-black text-[#0A2D50] tracking-tighter leading-none mb-4">
-                The <span className="text-[#FF6B00]">Cart</span>
+              <h1 className="text-5xl md:text-7xl font-black text-[#4A4A4A] tracking-tighter leading-none mb-4">
+                The <span className="text-[#C6A664]">Cart</span>
               </h1>
-              <p className="text-[#0A2D50]/60 font-medium">You have {items.length} exquisite items in your selection.</p>
+              <p className="text-[#4A4A4A]/60 font-medium">You have {items.length} exquisite items in your selection.</p>
             </div>
 
             <div className="space-y-6">
               {items.map((item) => (
                 <div 
                   key={item.id}
-                  className="group relative bg-white rounded-[32px] p-6 flex flex-col sm:flex-row items-center gap-8 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(10,45,80,0.05)] border border-[#0A2D50]/5"
+                  className="group relative bg-[#FDFBF7] rounded-[32px] p-6 flex flex-col sm:flex-row items-center gap-8 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(198,166,100,0.05)] border border-[#E6CCB2]/20"
                 >
-                  <div className="w-32 h-32 rounded-2xl overflow-hidden bg-[#FFF9F1] flex-shrink-0">
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden bg-[#FDFBF7] border border-[#E6CCB2]/20 flex-shrink-0">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   
                   <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-xl font-black text-[#0A2D50] mb-1">{item.name}</h3>
-                    <p className="text-sm text-[#0A2D50]/40 font-bold uppercase tracking-widest">Premium Skincare</p>
+                    <h3 className="text-xl font-black text-[#4A4A4A] mb-1">{item.name}</h3>
+                    <p className="text-sm text-[#4A4A4A]/40 font-bold uppercase tracking-widest">Premium Skincare</p>
                     <div className="mt-4 flex items-center justify-center sm:justify-start gap-4">
-                      <span className="text-2xl font-black text-[#0A2D50]">${Number(item.price).toFixed(2)}</span>
+                      <span className="text-2xl font-black text-[#4A4A4A]">₹{Number(item.price).toFixed(2)}</span>
                     </div>
                   </div>
 
@@ -117,10 +117,10 @@ const Cart = () => {
               ))}
 
               {items.length === 0 && (
-                <div className="bg-white rounded-[40px] border border-dashed border-[#0A2D50]/10 p-20 text-center">
-                  <ShoppingBag size={48} className="mx-auto text-[#0A2D50]/10 mb-6" />
-                  <p className="text-[#0A2D50]/40 font-bold italic">Your cart is currently empty.</p>
-                  <Link to="/shop" className="inline-block mt-8 px-10 py-4 bg-[#0A2D50] text-white rounded-2xl font-black hover:bg-[#FF6B00] transition-all">
+                <div className="bg-[#FDFBF7] rounded-[40px] border border-dashed border-[#E6CCB2]/30 p-20 text-center">
+                  <ShoppingBag size={48} className="mx-auto text-[#4A4A4A]/10 mb-6" />
+                  <p className="text-[#4A4A4A]/40 font-bold italic">Your cart is currently empty.</p>
+                  <Link to="/shop" className="inline-block mt-8 px-10 py-4 bg-[#C6A664] text-white rounded-2xl font-black hover:bg-[#4A4A4A] transition-all shadow-lg shadow-[#C6A664]/20">
                     Discover Collection
                   </Link>
                 </div>
@@ -130,49 +130,49 @@ const Cart = () => {
 
           {/* Summary Sidebar */}
           <aside className="w-full lg:w-[400px] shrink-0">
-            <div className="bg-white rounded-[40px] border border-[#0A2D50]/5 shadow-[0_30px_100px_rgba(10,45,80,0.05)] p-8 sticky top-32">
-              <h2 className="text-2xl font-black text-[#0A2D50] mb-8">Order Summary</h2>
+            <div className="bg-[#FDFBF7] rounded-[40px] border border-[#E6CCB2]/20 shadow-[0_30px_100px_rgba(198,166,100,0.05)] p-8 sticky top-32">
+              <h2 className="text-2xl font-black text-[#4A4A4A] mb-8">Order Summary</h2>
               
               <div className="space-y-4 mb-8">
-                <div className="flex justify-between text-[#0A2D50]/60 font-medium">
+                <div className="flex justify-between text-[#4A4A4A]/60 font-medium">
                   <span>Subtotal</span>
-                  <span className="font-bold text-[#0A2D50]">${total.toFixed(2)}</span>
+                  <span className="font-bold text-[#4A4A4A]">₹{total.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-[#0A2D50]/60 font-medium">
+                <div className="flex justify-between text-[#4A4A4A]/60 font-medium">
                   <span>Shipping</span>
                   <span className="text-emerald-500 font-bold">Complimentary</span>
                 </div>
-                <div className="flex justify-between text-[#0A2D50]/60 font-medium">
+                <div className="flex justify-between text-[#4A4A4A]/60 font-medium">
                   <span>Tax</span>
-                  <span className="font-bold text-[#0A2D50]">$0.00</span>
+                  <span className="font-bold text-[#4A4A4A]">₹0.00</span>
                 </div>
-                <div className="pt-4 border-t border-dashed border-[#0A2D50]/10 flex justify-between items-end">
-                  <span className="text-sm font-black text-[#0A2D50] uppercase tracking-widest">Total Amount</span>
-                  <span className="text-4xl font-black text-[#FF6B00] tracking-tighter">${total.toFixed(2)}</span>
+                <div className="pt-4 border-t border-dashed border-[#E6CCB2]/30 flex justify-between items-end">
+                  <span className="text-sm font-black text-[#4A4A4A] uppercase tracking-widest">Total Amount</span>
+                  <span className="text-4xl font-black text-[#C6A664] tracking-tighter">₹{total.toFixed(2)}</span>
                 </div>
               </div>
 
               <button 
                 disabled={items.length === 0}
-                className="w-full py-5 rounded-2xl bg-[#0A2D50] text-white font-black text-lg hover:bg-[#FF6B00] transition-all transform active:scale-[0.98] disabled:opacity-30 disabled:pointer-events-none shadow-xl shadow-[#0A2D50]/10 mb-8"
+                className="w-full py-5 rounded-2xl bg-[#C6A664] text-white font-black text-lg hover:bg-[#4A4A4A] transition-all transform active:scale-[0.98] disabled:opacity-30 disabled:pointer-events-none shadow-xl shadow-[#C6A664]/20 mb-8"
               >
                 Complete Checkout
               </button>
 
               {/* Trust Badges */}
-              <div className="grid grid-cols-1 gap-4 pt-8 border-t border-[#0A2D50]/5">
+              <div className="grid grid-cols-1 gap-4 pt-8 border-t border-[#E6CCB2]/20">
                 {[
                   { icon: ShieldCheck, text: "Secure Encryption", sub: "PCI DSS Compliant" },
                   { icon: Truck, text: "Global Delivery", sub: "2-4 Business Days" },
                   { icon: RotateCcw, text: "Easy Returns", sub: "30-Day Guarantee" }
                 ].map((badge, i) => (
                   <div key={i} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#FFF9F1] flex items-center justify-center text-[#0A2D50]">
+                    <div className="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E6CCB2]/20 flex items-center justify-center text-[#4A4A4A]">
                       <badge.icon size={20} />
                     </div>
                     <div>
-                      <p className="text-xs font-black text-[#0A2D50] leading-none">{badge.text}</p>
-                      <p className="text-[10px] font-bold text-[#0A2D50]/40 uppercase tracking-widest mt-1">{badge.sub}</p>
+                      <p className="text-xs font-black text-[#4A4A4A] leading-none">{badge.text}</p>
+                      <p className="text-[10px] font-bold text-[#4A4A4A]/40 uppercase tracking-widest mt-1">{badge.sub}</p>
                     </div>
                   </div>
                 ))}
